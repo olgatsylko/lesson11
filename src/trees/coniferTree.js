@@ -8,5 +8,8 @@ class ConiferTree extends Tree {
     getType() {
         return this.type;
     }
+    toString(){
+        return ` Tree '${this.type}' - '${this.name}': age '${this.age}'`
+    }
 }
 module.exports = ConiferTree;

@@ -4,7 +4,7 @@ class Tree {
         this.age = age;
     }
     toString(){
-        return `The tree '${this.type}' has age '${this.age}'`
+        return ` The tree '${this.type}': age '${this.age}'`
     }
 }
 

@@ -1,21 +1,20 @@
 let Forest = require ('../forest/forest');
 let ConTree = require ('../trees/coniferTree');
 let DecTree = require ('../trees/deciduousTree');
-let TargetArray = require ('../store/store');
 
 let treesPool = [];
 
-exports.forestBuilder = function (){
+exports.forestBuilder = () => {
     let forest = new Forest();
     this.treesPool = [
-        new ConTree ('conifier', 20, 'sprucevv'),
-        new DecTree ('deciduous', 3, 'pihta'),
+        new ConTree ('conifier', 10, 'fir-tree'),
+        new DecTree ('deciduous', 3, 'ash-tree', false),
     ]
     forest.addTrees(treesPool);
     return forest;    
 }
 
-exports.addForest = function (trees2) {
-    let arr = [];
-    return arr = [...this.treesPool, ...trees2];
+exports.addForest = (trees2) => {
+    return [...this.treesPool, ...trees2];
 }
+

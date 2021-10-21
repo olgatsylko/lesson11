@@ -14,15 +14,13 @@ class Store {
     getDecType(){
         return this.#decType;
     }
+    getReqType(type){
+        if (type ==='deciduous'){
+            return this.#decType
+        } else return this.#conType
+    }
+    
     getTreesForPlant (number, type) {
-        //let type = type;
-        /* for(let i=0; i<number; i++) {
-            this.storePool.find(function(type) {
-                let index = this.storePool.indexOf(this.storePool.getType == type);
-                array.push(this.storePool.getType == type);
-                this.storePool = this.storePool.slice(index,index++);
-            })
-        } */
         let array = this.storePool.filter((el)=> {
             return el.getType() === type;
         })
