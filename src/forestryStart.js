@@ -1,9 +1,12 @@
 let StoreB = require ('./store/storeBuilder');
 let ForestB = require ('./forest/forestBuilder');
 let prompt = require ('prompt-promise');
+const ForestBuilder = require('./forest/forestBuilder');
 
 let store = StoreB.buildStore();
-let forest = ForestB.forestBuilder();
+let forestBuild = new ForestBuilder();
+let forest = forestBuild.setUpForest();
+
 let arr = [];
 let type;
 
@@ -20,11 +23,11 @@ let type;
             console.log(`We have only '${store.getReqType(type)}' '${type}' trees`);
             console.log(`Order for '${store.getReqType(type)}' '${type}' tree(s) is created`);
             arr = store.getTreesForPlant(store.getReqType(type), type);
-            forest = ForestB.addForest(arr);
+            forest = forestBuild.addForest(arr);
         } else {
             console.log(`Order for '${numbTrees}' '${type}' tree(s) is created`);
             arr = store.getTreesForPlant(numbTrees, type);
-            forest = ForestB.addForest(arr);
+            forest = forestBuild.addForest(arr);
         }
 
     console.log('The forest includes: ' + forest.toString());
