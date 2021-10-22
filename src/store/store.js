@@ -5,6 +5,9 @@ class Store {
     constructor (){
         this.storePool = [];
     }
+    getStorePool(){
+        return this.storePool;
+    }
     addTree (trees) {
         this.storePool = [...this.storePool, ...trees];
     }
@@ -19,15 +22,14 @@ class Store {
             return this.#decType
         } else return this.#conType
     }
-    
     getTreesForPlant (number, type) {
         let array = this.storePool.filter((el)=> {
             return el.getType() === type;
         })
         let targetArray = array.splice(0, number);
+        this.storePool = this.storePool.filter(x => !targetArray.some(y => x.name === y.name));
         return targetArray;
     } 
-
     treeFilter (trees) {
         for (let n of trees){
             if (n.getType() == 'conifier'){

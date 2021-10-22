@@ -28,7 +28,7 @@ let type;
         }
 
     console.log('The forest includes: ' + forest.toString());
-    //console.log(forest);
+    console.log('Statistic for Store pool: ' + store.getStorePool());
     } else console.log('Invalid tree type, try again');
 
     prompt.finish();
