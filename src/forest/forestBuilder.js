@@ -15,6 +15,6 @@ exports.forestBuilder = () => {
 }
 
 exports.addForest = (trees2) => {
-    return [...this.treesPool, ...trees2];
+    return [...treesPool, ...trees2];
 }
 
